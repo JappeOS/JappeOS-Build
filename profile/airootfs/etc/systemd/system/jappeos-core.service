@@ -1,0 +1,26 @@
+[Unit]
+Description=Core System Management Daemon
+After=network.target dbus.service
+Requires=dbus.service
+# If this service fails, trigger system shutdown
+OnFailure=poweroff.target
+
+[Service]
+Type=simple
+ExecStart=/jappeos/jappeos_core
+Restart=no
+# Don't restart, just die — systemd will handle shutdown
+# Optionally, if we want it to restart during development:
+# Restart=on-failure
+
+ProtectSystem=full
+ProtectHome=yes
+NoNewPrivileges=yes
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_SYS_BOOT CAP_SYS_TIME
+PrivateTmp=yes
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

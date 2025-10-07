@@ -1,0 +1,5 @@
+[D-BUS Service]
+Name=org.jappeos.Core
+Exec=/jappeos/jappeos_core
+User=root
+SystemdService=jappeos-core.service
