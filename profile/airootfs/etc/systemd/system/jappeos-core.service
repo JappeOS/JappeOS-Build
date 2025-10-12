@@ -1,6 +1,7 @@
 [Unit]
 Description=Core System Management Daemon
-After=network.target dbus.service
+After=dbus.service systemd-user-sessions.service
+Wants=graphical.target
 Requires=dbus.service
 # If this service fails, trigger system shutdown
 OnFailure=poweroff.target
@@ -23,4 +24,4 @@ StandardOutput=journal
 StandardError=journal
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=multi-user.target graphical.target

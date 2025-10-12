@@ -10,6 +10,7 @@ bolt
 brltty
 broadcom-wl
 btrfs-progs
+cage
 clonezilla
 cloud-init
 cryptsetup
@@ -24,6 +25,7 @@ dosfstools
 e2fsprogs
 edk2-shell
 efibootmgr
+egl-wayland
 espeakup
 ethtool
 exfatprogs
@@ -47,7 +49,11 @@ kitty-terminfo
 ldns
 less
 lftp
+libdrm
+libevdev
 libfido2
+libinput
+libudev-zero
 libusb-compat
 linux
 linux-atm
@@ -63,11 +69,14 @@ mc
 mdadm
 memtest86+
 memtest86+-efi
+mesa
+mesa-demos
 mkinitcpio
 mkinitcpio-archiso
 mkinitcpio-nfs-utils
 mmc-utils
 modemmanager
+mtdev
 mtools
 nano
 nbd
@@ -104,6 +113,7 @@ sof-firmware
 squashfs-tools
 sudo
 syslinux
+systemd
 systemd-resolvconf
 tcpdump
 terminus-font
@@ -118,6 +128,12 @@ usbutils
 vim
 virtualbox-guest-utils-nox
 vpnc
+vulkan-intel
+vulkan-radeon
+vulkan-nouveau
+vulkan-mesa-layers
+wayland
+wayland-protocols
 wireless-regdb
 wireless_tools
 wpa_supplicant
@@ -125,4 +141,5 @@ wvdial
 xdg-utils
 xfsprogs
 xl2tpd
+xorg-server-xwayland
 zsh
