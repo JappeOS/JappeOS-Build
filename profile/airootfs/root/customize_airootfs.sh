@@ -6,3 +6,6 @@ ln -sf /usr/lib/systemd/system/graphical.target /etc/systemd/system/default.targ
 
 echo "[customize_airootfs.sh] Enabling core service"
 systemctl enable jappeos-core.service
+
+chmod 755 /jappeos/jappeos_core
+chmod -R 755 /jappeos
