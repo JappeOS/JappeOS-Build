@@ -1,2 +1,6 @@
 out/
 work/
+
+#temporary
+profile/airootfs/jappeos/*
+!profile/airootfs/jappeos/README.md
