@@ -4,7 +4,7 @@ After=dbus.service systemd-user-sessions.service
 Wants=graphical.target
 Requires=dbus.service
 # If this service fails, trigger system shutdown
-OnFailure=poweroff.target
+# OnFailure=poweroff.target TODO: Disabled for testing
 
 [Service]
 Type=simple
@@ -14,11 +14,12 @@ Restart=no
 # Optionally, if we want it to restart during development:
 # Restart=on-failure
 
-ProtectSystem=full
-ProtectHome=yes
-NoNewPrivileges=yes
-CapabilityBoundingSet=CAP_NET_ADMIN CAP_SYS_BOOT CAP_SYS_TIME
-PrivateTmp=yes
+#ProtectSystem=no # TODO
+#ReadWritePaths=/jappeos
+#ProtectHome=yes
+#NoNewPrivileges=yes
+#CapabilityBoundingSet=CAP_NET_ADMIN CAP_SYS_BOOT CAP_SYS_TIME
+#PrivateTmp=yes
 
 StandardOutput=journal
 StandardError=journal
