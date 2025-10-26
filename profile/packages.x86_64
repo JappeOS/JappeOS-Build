@@ -15,6 +15,7 @@ clonezilla
 cloud-init
 cryptsetup
 darkhttpd
+dbus
 ddrescue
 dhcpcd
 diffutils
@@ -38,6 +39,7 @@ gpm
 gptfdisk
 grml-zsh-config
 grub
+gtk3
 hdparm
 hyperv
 intel-ucode
@@ -53,7 +55,6 @@ libdrm
 libevdev
 libfido2
 libinput
-libudev-zero
 libusb-compat
 linux
 linux-atm
@@ -92,6 +93,7 @@ openconnect
 openpgp-card-tools
 openssh
 openvpn
+pam
 partclone
 parted
 partimage
