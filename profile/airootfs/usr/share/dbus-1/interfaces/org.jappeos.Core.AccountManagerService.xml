@@ -3,7 +3,7 @@
 <node>
   <interface name="org.jappeos.Core.AccountManagerService">
     <method name="ListUsers">
-      <arg name="users" type="a(s)" direction="out"/>
+      <arg name="users" type="ao" direction="out"/>
     </method>
 
     <method name="GetUserProperty">
