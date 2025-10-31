@@ -1,7 +1,7 @@
 <!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
                       "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
 <node>
-  <interface name="com.jappeos.Core.LoggerService">
+  <interface name="org.jappeos.Core.LoggerService">
     <method name="Log">
       <arg name="level" type="s" direction="in"/>
       <arg name="message" type="s" direction="in"/>
