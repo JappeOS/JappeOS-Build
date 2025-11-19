@@ -2,12 +2,18 @@
                       "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
 <node>
   <interface name="org.jappeos.Core.AccountManagerService">
+    <method name="CreateInitialUserWithPassword">
+      <arg name="username" type="s" direction="in"/>
+      <arg name="realName" type="s" direction="in"/>
+      <arg name="cryptedPassword" type="s" direction="in"/>
+    </method>
+
     <method name="ListUsers">
       <arg name="users" type="ao" direction="out"/>
     </method>
 
     <method name="GetUserProperty">
-      <arg name="userObject" type="s" direction="in"/>
+      <arg name="userObject" type="o" direction="in"/>
       <arg name="property" type="s" direction="in"/>
       <arg name="value" type="v" direction="out"/>
     </method>
