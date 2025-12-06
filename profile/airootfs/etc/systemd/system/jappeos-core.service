@@ -1,8 +1,8 @@
 [Unit]
 Description=Core System Management Daemon
-After=dbus.service systemd-user-sessions.service
-Wants=graphical.target
+After=dbus.service systemd-logind.service graphical-pre.target
 Requires=dbus.service
+Wants=graphical-pre.target
 # If this service fails, trigger system shutdown
 # OnFailure=poweroff.target TODO: Disabled for testing
 
@@ -25,4 +25,4 @@ StandardOutput=journal
 StandardError=journal
 
 [Install]
-WantedBy=multi-user.target graphical.target
+WantedBy=basic.target
