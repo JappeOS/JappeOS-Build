@@ -1,0 +1,10 @@
+#%PAM-1.0
+#auth       optional    pam_faillock.so preauth silent deny=5 unlock_time=900
+auth       required    pam_unix.so try_first_pass
+#auth       [default=die] pam_faillock.so authfail deny=5 unlock_time=900
+account    required    pam_unix.so
+password   required    pam_unix.so use_authtok try_first_pass
+session    required    pam_loginuid.so
+session    required    pam_systemd.so class=user
+session    required    pam_env.so
+session    optional    pam_limits.so
