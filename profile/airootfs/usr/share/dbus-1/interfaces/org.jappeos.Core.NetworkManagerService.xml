@@ -1,0 +1,70 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+                      "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.jappeos.Core.NetworkManagerService">
+    <method name="ListDevices">
+      <arg name="devices" type="ao" direction="out"/>
+    </method>
+
+    <signal name="DeviceAdded">
+      <arg name="device" type="o"/>
+    </signal>
+
+    <signal name="DeviceRemoved">
+      <arg name="device" type="o"/>
+    </signal>
+  </interface>
+
+  <interface name="org.jappeos.Core.NetworkManagerService.Device">
+    <property name="Id" type="s" access="read"/>
+    <property name="Type" type="s" access="read"/>
+    <property name="State" type="s" access="read"/>
+    <property name="HwAddress" type="s" access="read"/>
+    <property name="Managed" type="b" access="read"/>
+    <property name="ActiveConnection" type="o" access="read"/>
+
+    <signal name="StateChanged">
+      <arg name="old_state" type="s"/>
+      <arg name="new_state" type="s"/>
+    </signal>
+  </interface>
+
+  <interface name="org.jappeos.Core.NetworkManagerService.Connection">
+    <property name="Id" type="s" access="read"/>
+    <property name="Type" type="s" access="read"/>
+    <property name="State" type="s" access="read"/>
+    <property name="Ip4Address" type="s" access="read"/>
+    <property name="Ip6Address" type="s" access="read"/>
+    <property name="SignalStrength" type="i" access="read"/>
+  </interface>
+
+  <interface name="org.jappeos.Core.NetworkManagerService.Device.WiFi">
+    <method name="Scan"/>
+
+    <method name="Connect">
+      <arg name="ssid" type="s" direction="in"/>
+      <arg name="security" type="s" direction="in"/>
+      <arg name="secret" type="s" direction="in"/>
+    </method>
+
+    <method name="Disconnect"/>
+
+    <property name="AccessPoints" type="ao" access="read"/>
+
+    <signal name="AccessPointAdded">
+      <arg name="ap" type="o"/>
+    </signal>
+
+    <signal name="AccessPointRemoved">
+      <arg name="ap" type="o"/>
+    </signal>
+  </interface>
+
+  <interface name="org.jappeos.Core.NetworkManagerService.AccessPoint">
+    <property name="Ssid" type="s" access="read"/>
+    <property name="Strength" type="i" access="read"/>
+    <property name="Security" type="s" access="read"/>
+    <property name="Frequency" type="i" access="read"/>
+    <property name="Connected" type="b" access="read"/>
+  </interface>
+</node>
