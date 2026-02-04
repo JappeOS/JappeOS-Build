@@ -22,20 +22,6 @@
     <property name="HwAddress" type="s" access="read"/>
     <property name="Managed" type="b" access="read"/>
     <property name="ActiveConnection" type="o" access="read"/>
-
-    <signal name="StateChanged">
-      <arg name="old_state" type="s"/>
-      <arg name="new_state" type="s"/>
-    </signal>
-  </interface>
-
-  <interface name="org.jappeos.Core.NetworkManagerService.Connection">
-    <property name="Id" type="s" access="read"/>
-    <property name="Type" type="s" access="read"/>
-    <property name="State" type="s" access="read"/>
-    <property name="Ip4Address" type="s" access="read"/>
-    <property name="Ip6Address" type="s" access="read"/>
-    <property name="SignalStrength" type="i" access="read"/>
   </interface>
 
   <interface name="org.jappeos.Core.NetworkManagerService.Device.WiFi">
@@ -58,6 +44,15 @@
     <signal name="AccessPointRemoved">
       <arg name="ap" type="o"/>
     </signal>
+  </interface>
+
+  <interface name="org.jappeos.Core.NetworkManagerService.Connection">
+    <property name="Id" type="s" access="read"/>
+    <property name="Type" type="s" access="read"/>
+    <property name="State" type="s" access="read"/>
+    <property name="Ip4Address" type="s" access="read"/>
+    <property name="Ip6Address" type="s" access="read"/>
+    <property name="SignalStrength" type="i" access="read"/>
   </interface>
 
   <interface name="org.jappeos.Core.NetworkManagerService.AccessPoint">

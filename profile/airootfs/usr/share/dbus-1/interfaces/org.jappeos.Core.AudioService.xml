@@ -1,28 +1,27 @@
 <!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
                       "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
 <node>
-  <interface name="org.jappeos.Core.PowerManagerService">
-    <method name="Shutdown"/>
-    <method name="Reboot"/>
-    <method name="Suspend"/>
-
-    <method name="ListBatteryDevices">
+  <interface name="org.jappeos.Core.AudioService">
+    <method name="ListDevices">
       <arg name="devices" type="ao" direction="out"/>
     </method>
 
-    <signal name="BatteryDeviceAdded">
+    <property name="ActiveInputDevice" type="o" access="readwrite"/>
+    <property name="ActiveOutputDevice" type="o" access="readwrite"/>
+
+    <signal name="DeviceAdded">
       <arg name="device" type="o"/>
     </signal>
 
-    <signal name="BatteryDeviceRemoved">
+    <signal name="DeviceRemoved">
       <arg name="device" type="o"/>
     </signal>
   </interface>
 
-  <interface name="org.jappeos.Core.PowerManagerService.BatteryDevice">
+  <interface name="org.jappeos.Core.AudioService.Device">
     <property name="Id" type="s" access="read"/>
     <property name="Type" type="s" access="read"/>
-    <property name="IsCharging" type="b" access="read"/>
-    <property name="ChargePercentage" type="i" access="read"/>
+    <property name="Direction" type="s" access="read"/>
+    <property name="Volume" type="d" access="readwrite"/>
   </interface>
 </node>
