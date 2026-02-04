@@ -10,6 +10,12 @@ systemctl enable jappeos-core.service
 systemctl disable reflector.service
 systemctl enable reflector.timer
 
+echo "[customize_airootfs.sh] Disabling unnecessary services"
+systemctl disable systemd-networkd
+systemctl disable systemd-resolved
+systemctl disable systemd-networkd-wait-online
+systemctl enable NetworkManager.service
+
 echo "[customize_airootfs.sh] Setting Plymouth theme"
 plymouth-set-default-theme bgrt
 mkinitcpio -P
