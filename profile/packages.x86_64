@@ -39,7 +39,6 @@ gpart
 gpm
 gptfdisk
 grml-zsh-config
-grub
 gtk3
 hdparm
 hyperv
@@ -84,6 +83,7 @@ mtools
 nano
 nbd
 ndisc6
+networkmanager
 nfs-utils
 nilfs-utils
 nmap
