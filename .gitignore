@@ -1,5 +1,7 @@
-out/
-work/
+/out/
+/work/
+/pacman-cache/
+/pacman-cache/.last_refresh
 
 #temporary
 profile/airootfs/jappeos/*
