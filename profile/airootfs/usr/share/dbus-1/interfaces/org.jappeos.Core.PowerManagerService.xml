@@ -22,7 +22,10 @@
   <interface name="org.jappeos.Core.PowerManagerService.BatteryDevice">
     <property name="Id" type="s" access="read"/>
     <property name="Type" type="s" access="read"/>
-    <property name="IsCharging" type="b" access="read"/>
-    <property name="ChargePercentage" type="i" access="read"/>
+    <property name="PowerSupply" type="b" access="read"/>
+    <property name="State" type="s" access="read"/>
+    <property name="ChargePercentage" type="d" access="read"/>
+    <property name="TimeToEmpty" type="x" access="read"/>
+    <property name="TimeToFull" type="x" access="read"/>
   </interface>
 </node>
