@@ -23,6 +23,7 @@
     <property name="Id" type="s" access="read"/>
     <property name="Type" type="s" access="read"/>
     <property name="PowerSupply" type="b" access="read"/>
+    <property name="IsPresent" type="b" access="read"/>
     <property name="State" type="s" access="read"/>
     <property name="ChargePercentage" type="d" access="read"/>
     <property name="TimeToEmpty" type="x" access="read"/>
