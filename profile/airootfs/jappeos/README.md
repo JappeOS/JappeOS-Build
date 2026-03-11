@@ -4,3 +4,4 @@ The binaries are:
 - `desktop/desktop` (`jappeos_desktop`)
 - `greeter/greeter` (`jappeos_greeter`)
 - `jappeos_core`
+- `jappeos_session`
