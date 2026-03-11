@@ -11,3 +11,5 @@ qemu-system-x86_64 \
   -device virtio-gpu-pci \
   -display gtk,gl=on \
   -vga none
+
+# TODO: Take latest .iso
