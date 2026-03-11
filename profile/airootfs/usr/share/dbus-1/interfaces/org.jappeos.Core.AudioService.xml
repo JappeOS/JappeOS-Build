@@ -6,6 +6,10 @@
       <arg name="devices" type="ao" direction="out"/>
     </method>
 
+    <method name="ListStreams">
+      <arg name="streams" type="ao" direction="out"/>
+    </method>
+
     <property name="ActiveInputDevice" type="o" access="readwrite"/>
     <property name="ActiveOutputDevice" type="o" access="readwrite"/>
 
@@ -16,12 +20,37 @@
     <signal name="DeviceRemoved">
       <arg name="device" type="o"/>
     </signal>
+
+    <signal name="StreamAdded">
+      <arg name="stream" type="o"/>
+    </signal>
+
+    <signal name="StreamRemoved">
+      <arg name="stream" type="o"/>
+    </signal>
   </interface>
 
+  # Object path example: /org/jappeos/Core/AudioService/Devices/1
   <interface name="org.jappeos.Core.AudioService.Device">
     <property name="Id" type="s" access="read"/>
+    <property name="Name" type="s" access="read"/>
     <property name="Type" type="s" access="read"/>
+    <property name="Direction" type="s" access="read"/> # input or output device
+    <property name="Volume" type="d" access="readwrite"/> # 0.0 – 1.0
+    <property name="Muted" type="b" access="readwrite"/>
+    <property name="Available" type="b" access="read"/>
+  </interface>
+
+  # Object path example: /org/jappeos/Core/AudioService/Streams/1
+  <interface name="org.jappeos.Core.AudioService.Stream">
+    <property name="Id" type="s" access="read"/>
+    <property name="Name" type="s" access="read"/>
+    <property name="ApplicationName" type="s" access="read"/>
     <property name="Direction" type="s" access="read"/>
+
+    <property name="Device" type="o" access="readwrite"/>
+
     <property name="Volume" type="d" access="readwrite"/>
+    <property name="Muted" type="b" access="readwrite"/>
   </interface>
 </node>
