@@ -16,6 +16,25 @@
   </interface>
 
   <interface name="org.jappeos.Core.NetworkManagerService.Device">
+    <method name="SetEnabled">
+      <arg name="enabled" type="b" direction="in"/>
+      <doc:doc>
+        <doc:description>
+          <doc:para>
+            Enables or disables the network device.
+
+            On Ethernet devices, this will enable or disable the connection.
+            The state of the Ethernet device will be ACTIVATED when enabled and DISCONNECTED when disabled, provided that it has a carrier.
+            If the Ethernet device does not have a carrier, its state will be UNAVAILABLE regardless of whether it is enabled or disabled.
+
+            On Wi-Fi devices, this will enable or disable the Wi-Fi radio.
+            When enabled, the state of the Wi-Fi device will be ACTIVATED if it is connected to a network, or DISCONNECTED if it is not connected to any network.
+            If disabled, the state of the Wi-Fi device will be UNAVAILABLE.
+          </doc:para>
+        </doc:description>
+      </doc:doc>
+    </method>
+
     <property name="Id" type="s" access="read"/>
     <property name="Type" type="s" access="read"/>
     <property name="State" type="s" access="read"/>
@@ -36,6 +55,13 @@
     <method name="Disconnect"/>
 
     <property name="AccessPoints" type="ao" access="read"/>
+
+    <signal name="ConnectResult">
+      <arg name="requestId" type="t"/>
+      <arg name="success" type="b"/>
+      <arg name="reasonCode" type="s"/>
+      <arg name="reasonMessage" type="s"/>
+    </signal>
 
     <signal name="AccessPointAdded">
       <arg name="ap" type="o"/>
