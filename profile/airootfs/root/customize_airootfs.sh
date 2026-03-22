@@ -9,6 +9,7 @@ systemctl enable jappeos-core.service
 # Line below fixes an issue with the reflector service blocking boot
 systemctl disable reflector.service
 systemctl enable reflector.timer
+systemctl enable auto-cpufreq
 
 echo "[customize_airootfs.sh] Disabling unnecessary services"
 systemctl disable systemd-networkd
@@ -25,7 +26,9 @@ systemctl enable plymouth-quit-wait.service
 
 echo "[customize_airootfs.sh] Setting permissions"
 chmod 755 /jappeos/jappeos_core
+#chmod 755 /jappeos/jappeos_session
 chmod -R 755 /jappeos
+chmod -R 0440 /etc/sudoers.d
 
 echo "[customize_airootfs.sh] Writing /etc/issue and /etc/issue.net"
 echo "JappeOS \n \l" > /etc/issue
@@ -42,6 +45,24 @@ HOME_URL="https://jappeos.github.io/"
 VENDOR_NAME="Jappe Studios"
 DEFAULT_HOSTNAME=jappeos-????-????-????
 EOF
+
+echo "[customize_airootfs.sh] Writing /etc/group"
+# Add jos-greeter to groups, creating them if they don't exist
+for group in seat video render input; do
+    if grep -q "^${group}:" /etc/group; then
+        # Group exists — append jos-greeter to it
+        gpasswd -a jos-greeter "$group"
+    else
+        # Group doesn't exist — create it with the right GID
+        case "$group" in
+            seat)  groupadd -g 972 seat  ;;
+            video) groupadd -g 985 video ;;
+            render) groupadd -g 989 render ;;
+            input) groupadd -g 970 input ;;
+        esac
+        gpasswd -a jos-greeter "$group"
+    fi
+done
 
 echo "[customize_airootfs.sh] Configuring late services"
 LATE_SERVICES_FILE="/root/late_services.list"
