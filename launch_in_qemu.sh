@@ -10,6 +10,8 @@ qemu-system-x86_64 \
   -bios /usr/share/qemu/OVMF.fd \
   -device virtio-gpu-pci \
   -display gtk,gl=on \
-  -vga none
+  -vga none \
+  -netdev user,id=net0,hostfwd=tcp::2222-:22 \
+  -device virtio-net,netdev=net0
 
 # TODO: Take latest .iso
