@@ -50,6 +50,7 @@
       <arg name="ssid" type="s" direction="in"/>
       <arg name="security" type="s" direction="in"/>
       <arg name="secret" type="s" direction="in"/>
+      <arg name="requestId" type="t" direction="out"/>
     </method>
 
     <method name="Disconnect"/>
