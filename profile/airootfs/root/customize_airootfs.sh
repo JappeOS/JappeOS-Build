@@ -26,7 +26,7 @@ systemctl enable plymouth-quit-wait.service
 
 echo "[customize_airootfs.sh] Setting permissions"
 chmod 755 /jappeos/jappeos_core
-#chmod 755 /jappeos/jappeos_session
+chmod 755 /jappeos/jappeos_session
 chmod -R 755 /jappeos
 chmod -R 0440 /etc/sudoers.d
 

@@ -12,6 +12,7 @@ bolt
 brltty
 broadcom-wl
 btrfs-progs
+chromium
 clonezilla
 cloud-init
 cryptsetup
@@ -104,6 +105,7 @@ networkmanager
 nfs-utils
 nilfs-utils
 nmap
+noto-fonts
 ntfs-3g
 nvme-cli
 open-iscsi
@@ -118,6 +120,10 @@ partclone
 parted
 partimage
 pcsclite
+pipewire
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
 plymouth-jappeos
 ppp
 pptpclient
@@ -161,6 +167,7 @@ wayland
 wayland-protocols
 wireless-regdb
 wireless_tools
+wireplumber
 wpa_supplicant
 wvdial
 xcb-util-wm
