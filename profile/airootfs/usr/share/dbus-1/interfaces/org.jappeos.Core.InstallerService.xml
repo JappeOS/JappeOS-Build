@@ -26,8 +26,22 @@
       <arg name="warnings" type="as" direction="out"/>
     </method>
 
+    <method name="CancelInstallPlan">
+      <arg name="plan" type="u" direction="in"/>
+    </method>
+
     <method name="BeginInstallation">
       <arg name="plan" type="u" direction="in"/>
+    </method>
+
+    <method name="VerifyUsername">
+      <arg name="username" type="s" direction="in"/>
+      <arg name="valid" type="b" direction="out"/>
+    </method>
+
+    <method name="VerifyHostname">
+      <arg name="hostname" type="s" direction="in"/>
+      <arg name="valid" type="b" direction="out"/>
     </method>
 
     <property name="State" type="s" access="read"/>
