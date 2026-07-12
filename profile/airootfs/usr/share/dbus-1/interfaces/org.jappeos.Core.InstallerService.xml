@@ -3,13 +3,13 @@
 <node>
   <interface name="org.jappeos.Core.InstallerService">
     <method name="GetLocaleInfo">
-      <arg name="locales" type="{ss}" direction="out"/>
+      <arg name="locales" type="a{ss}" direction="out"/>
       <arg name="timezones" type="as" direction="out"/>
-      <arg name="keyboardLayouts" type="{s(s{ss})}" direction="out"/>
+      <arg name="keyboardLayouts" type="a{s(sa{ss})}" direction="out"/>
     </method>
 
     <method name="GetStorageInfo">
-      <arg name="storageDevices" type="{s(ta(ssts))}" direction="out"/>
+      <arg name="storageDevices" type="a{s(ta(ssts))}" direction="out"/>
     </method>
 
     <method name="CreateInstallPlan">
@@ -19,7 +19,7 @@
       <arg name="timezone" type="s" direction="in"/>
       <arg name="locale" type="s" direction="in"/>
       <arg name="keyboardLayout" type="(ss)" direction="in"/>
-      <arg name="disk" type="(sta(ss)a(t{sv}))" direction="in"/>
+      <arg name="disk" type="(sta(ss)a(ta{sv}))" direction="in"/>
       <arg name="installProprietary" type="b" direction="in"/>
       <arg name="installRecommendedDrivers" type="b" direction="in"/>
       <arg name="planId" type="u" direction="out"/>
