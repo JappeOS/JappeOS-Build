@@ -3,9 +3,41 @@
 <node>
   <interface name="org.jappeos.Core.LocaleService">
     <method name="GetLocales">
-      <arg name="locales" type="{ss}" direction="out"/>
+      <arg name="locales" type="a{ss}" direction="out"/>
     </method>
 
-    <property name="Locale" type="s" access="readwrite"/>
+    <method name="SetLocale">
+      <arg name="locale" type="s" direction="in"/>
+      <arg name="interactive" type="b" direction="in"/>
+    </method>
+
+    <method name="GetKeyboardLayouts">
+      <arg name="keyboardLayouts" type="a{ss}" direction="out"/>
+    </method>
+
+    <method name="GetKeyboardLayoutVariants">
+      <arg name="keyboardLayout" type="s" direction="in"/>
+      <arg name="keyboardLayoutVariants" type="as" direction="out"/>
+    </method>
+
+    <method name="SetKeyboardLayout">
+      <arg name="layout" type="s" direction="in"/>
+      <arg name="variant" type="s" direction="in"/>
+      <arg name="interactive" type="b" direction="in"/>
+    </method>
+
+    <method name="GetTimezones">
+      <arg name="timezones" type="as" direction="out"/>
+    </method>
+
+    <method name="SetTimezone">
+      <arg name="timezone" type="s" direction="in"/>
+      <arg name="interactive" type="b" direction="in"/>
+    </method>
+
+    <property name="Locale" type="s" access="read"/>
+    <property name="KeyboardLayout" type="s" access="read"/>
+    <property name="KeyboardLayoutVariant" type="s" access="read"/>
+    <property name="Timezone" type="s" access="read"/>
   </interface>
 </node>
