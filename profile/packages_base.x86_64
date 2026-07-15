@@ -38,6 +38,9 @@ intel-ucode
 irssi
 iw
 iwd
+jappeos_core
+jappeos_desktop
+jappeos_greeter
 jappeos_media_player
 jappeos_software_center
 jappeos_terminal
