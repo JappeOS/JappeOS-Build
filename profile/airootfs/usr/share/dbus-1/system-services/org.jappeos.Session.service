@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=org.jappeos.Session
-Exec=/jappeos/jappeos_session
