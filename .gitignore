@@ -2,7 +2,3 @@
 /work/
 /pacman-cache/
 /pacman-cache/.last_refresh
-
-#temporary
-profile/airootfs/jappeos/*
-!profile/airootfs/jappeos/README.md
