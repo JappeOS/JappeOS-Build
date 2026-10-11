@@ -185,4 +185,4 @@ squashfs-tools
 testdisk
 brltty
 b43-fwcutter
-broadcom-wl
+broadcom-wl-dkms
