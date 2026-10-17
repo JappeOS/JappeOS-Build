@@ -73,6 +73,7 @@ linux
 linux-atm
 linux-firmware
 linux-firmware-marvell
+linux-headers
 llvm-libs
 lsscsi
 lvm2
