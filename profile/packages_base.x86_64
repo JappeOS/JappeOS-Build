@@ -1,1 +1,11 @@
 jappeos_meta_base_gui
+
+# Explicit providers prevent dependency resolution from choosing other defaults.
+mkinitcpio
+noto-fonts
+vulkan-intel
+vulkan-radeon
+vulkan-nouveau
+lib32-vulkan-intel
+lib32-vulkan-radeon
+lib32-vulkan-nouveau
