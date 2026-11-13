@@ -22,10 +22,8 @@ OUT_PACKAGES_FILE="$(pwd)/profile/packages.$arch"
 sudo cp "$LIVE_PACKAGES_FILE" "$SYSTEM_LIVE_PACKAGES_FILE"
 sudo chown "root:root" "$SYSTEM_LIVE_PACKAGES_FILE"
 
-{
-  grep -vxFf "$LIVE_PACKAGES_FILE" "$BASE_PACKAGES_FILE"
-  cat "$LIVE_PACKAGES_FILE"
-} | grep -v '^[[:space:]]*$' > "$OUT_PACKAGES_FILE"
+# Overlapping lists are valid; grep would return 1 if all base entries are live.
+awk 'NF && !seen[$0]++' "$BASE_PACKAGES_FILE" "$LIVE_PACKAGES_FILE" > "$OUT_PACKAGES_FILE"
 
 # Build
 mkdir -p out work
