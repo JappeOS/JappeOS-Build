@@ -3,3 +3,4 @@
 /pacman-cache/
 /pacman-cache/.last_refresh
 /profile/packages.x86_64
+/profile/airootfs/jappeos/packages_live
